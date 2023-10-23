@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>shopping website</title>
+<style type="text/css">
+*{margin:0;padding:0;box_sizing:border-box;}
+body{width:100%;height:100%;}
+#header{display:flex;align-items:center;
+justify-content:space-between;
+padding:20px 90px;
+background-color:#fff;
+box-shadow:0 5px 15px rgba(0,0,0,0.06);
+z-index:999;
+position:sticky;top:0;left:0;
+}
+#navbar{display:flex;align-items:center;justify-content:center;position:relative;}
+
+
+
+
+#navbar li{list-style:none;padding:0 20px;position:relative;}
+#navbar li a{text-decoration:none;font-size:16px;font-weight:600;
+color:blue;transition:0.3s ease;
+}
+#navbar li a:hover,
+#navbar li a.active{color:#f3971b;}
+#navbar li a.active::after,
+#navbar li a:hover::after{content:" ";
+width:30%;height:2px;background:aqua;position:absolute;
+bottom:-4px;left:20px;
+}
+#product1{text-align:center;}
+#product1 .pro{width:23%;min-width:250px;padding:10px 12px;padding-left:50px;
+border:1px solid #CCC7D0;border-radius:25px;cursor:pointer;
+box-shadow:20px 20px 20px rgba(0,0,0,0.02);
+margin:15px 0px;position:relative;transition:0.2s ease;margin-right:10px;
+}
+#product1 .pro img{width:40%;border-radius:20px;}
+#product1 .pro :hover{box-shadow:20px 20px 30px rgba(0,0,0,0.04);}
+#product1 .pro des{text-align:start;padding:10px 0;}
+#product1 .pro .des span{color:#COC063;font-size:12px;}
+#product1 .pro .des h5{padding-top:7px;color:#1a1a1a;font-size:14px;}
+#product1 .pro .des i{font-size:12px;color:rgb(243,182,25);}
+#product1 .pro .des h4{padding-top:7px;font-size:15px;font-weight:700;color:blue;}
+#product1 .pro .cart{width:40px;height:40px;lign-height:40px;
+border-radius:50px;background-color:tomato;font-weight:500;color:navy;
+border:1px solid #CCe7C0;position:absolute;bottom:20px;right:10px;
+}
+#product1 .pro-container{display:flex;jusify-content:space_between;padding-top:20px;
+flex-wrap:wrap;text-align:center;margin-left:5px;
+}
+
+
+
+
+
+
+
+#newsletter{display:flex;justify-content:space-between;height:10vh;width:100%;
+align-items:center;flex-wrap:wrap;background-image:url("/storage/emulated/0/Pictures/Screenshots/IMG_20230612_091127.jpg");
+background-repeat:no-repeat;background-position:20% 30%;background-color:navy;
+}
+#newsletter h4{font-size:22px;font-weight:700;color:#fff;padding-left:10px;}
+#newsletter p{font-size:15px;font-weight:600;color:aqua;padding-left:10px;}
+#newsletter p span{color:#f3971b;}
+#newsletter input{height:3.125ram;padding:0 1.25am;
+font-size:15px;width:100%;border:1px solid teansparent;
+border-radius:4px;outline:none;border-top-right-radius:0;border-bottom-right-radius:0;
+}
+#newsletter button{background-color:#f3971b;color:white;white-space:no-wrap;border-top-left-radius:0;border-bottom-left-radius:0;}
+#newsletter .form{display:flex;width:30%;}
+
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;}
+footer .col{display:flex;flex-direction:column;align-items:flex start;margin-bottom:20px;}
+footer .logo{margin-bottom:30px;}
+footer h4{font-size:14px;padding-bottom:20px;}
+footer p{font-size:13px;;margin:0 0 8px 0;}
+footer a{font-size:13px;text-decoration:none;color:#222;margin-botton:10px;}
+footer .follow{margin-top:20px;}
+footer .follow i{color:#32a8a2;padding-right:4px;cursor:pointer;}
+footer .install .row img{border:1px solid #32a8a2;border-radius:4px;}
+footer .install img{margin:10px 0 15px 0;}
+footer .follow i:hover,
+footer a :hover{color:#a032a8;}
+footer .copyright{width:100%;text-align:center;}
+#mobile{display:none;align-items:center;}
+#lg-bag{display:flex;}
+#close{display:none;}
+.logo{width:50px;height:40px;}
+.row{width:70px;height:10vh;}
+
+
+#prodetails .single-pro-image{width:100%;margin-leftt:50px;}
+.small-img-group{display:flex;justify-content:space-between;}
+small-img-col{flex-basis:24%;cursor:pointer;}
+#prodetails{display:flex;margin-top:20px;}
+#prodetails .single-pro-details{width:50%;padding-top:30%;}
+#prodetails .single-pro-details h4{padding:40px 0 20px 0;}
+#prodetails .single-pro-details h2{font-size:26px;}
+#prodetails .single-pro-details select{display:block;
+padding:5px 10px;margin-bottom:10px;
+}
+#prodetails .single-pro-details input{width:50px;height:47px;
+padding-left:10px;font-size:16px;margin-right:10px;
+}
+#prodetails .single-pro-details button{background:#088178;color:#fff;}
+#prodetails .single-pro-details input:focus{outline:none;}
+#prodetails .single-pro-details span{line-height:25px;}
+
+
+
+@media screen and (max-width:477px){
+.section-p1{padding:10px;}
+#navbar{display:flex;align-items:flex-start;justify-content:flex-start;
+flex-direction:column;position:absolute;top:0;right:-300px;
+height:100vh;width:300px;background-color:#fff;
+box-shadow:0 40px 64px rgba(0,0,0,0.2);
+padding:80px 0 0 10px;transition:0.3s;
+
+}
+
+#navbar li{margin-botton:25px;}
+
+
+
+#header{padding: 10px 10px;}
+
+h2{font-size:32px;}
+h1{font-size:38px;}
+
+#product .pro{width:100%;}
+
+#newsletter .form{width:100%;height:50px;}
+#newsletter{padding:50px 20px;height:20vh;width:85%;}
+footer .copyright{text-align:start;}
+#newsletter button{width:80px;}
+
+#mobile{display:flex;align-items:center;}
+#mobile i{color:blue;font-size:24px;padding-left:20px;}
+#close{position:absolute;top:30px;left:30px;color:blue;font-size:24px;display:initial;}
+#close{display:initial;}
+
+#navbar.active{right:0px;}
+.row img{width:70px;height:20px;}
+
+#prodetails{diaplay:flex;flex-direction:column;}
+#prodetails .single-pro-image{width:100%;margin-right:0px;}
+#prodetails .single-pro-details{width:100%;}
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<section id="header">
+<a href="#" ><img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_200528.jpg" class="logo" alt="logo"></a>
+<div>
+<ul id="navbar">
+<li><a  href="index.html" >Home</a></li>
+<li><a class="active" href="mshopping.html" >Shop</a></li>
+<li><a href="mabout.html" >About</a></li>
+<li><a href="mcontact.html" >Contact</a></li>
+<li><a href="#" id="lg-bag"><i class="fa fa-shopping-cart"></i></a></li>
+<a href="#" id="close"><i class="fa fa-times-circle"></i></a>
+</ul>
+
+</div>
+
+<div id="mobile">
+<a href="#" ><i class="fa fa-shopping-cart"></i></a>
+<a href="#" ><i id="bar" class="fa fa-bars"></i></a>
+</div>
+
+</section>
+
+<section id="prodetails" class="section-p1">
+<div class="single-pro-image">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_192025.jpg" width="100%" id="mainImg">
+
+<div class="small-img-group">
+<div class="small-img-col">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_192033.jpg" width="100%" class="small-img">
+</div>
+<div class="small-img-col">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_192043.jpg" width="100%" class="small-img">
+</div>
+<div class="small-img-col">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_192051.jpg" width="100%" class="small-img">
+</div>
+<div class="small-img-col">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_192015.jpg" width="100%" class="small-img">
+</div>
+
+</div>
+</div>
+
+
+<div class="single-pro-details">
+<h6>clay pots</h6>
+<h4>Handmade Clay pots</h4>
+<h2>$95.00</h2>
+<select>
+<option>Select size</option>
+<option>5L</option>
+<option>10L</option>
+<option>30L</option>
+<option>50L</option>
+</select>
+<input type="number" value="1">
+<button class="normal">Add to Cart</button>
+<h4>Product Details</h4>
+<span>The InfiniteComfort T-Shirt is also thoughtfully tailored to provide a flattering fit for all body types. With its carefully constructed seams and modern silhouette, it's a versatile garment that can be effortlessly dressed up or down, suitable for any occasion. Pair it with jeans for a casual look or dress it up with a blazer for a more polished ensemble. The possibilities are endless.</span>
+</div>
+</section>
+
+
+<section id="product1" class="section.p1">
+<h2>Featured Products</h2>
+<p> Collection for New Morden Design</p>
+<div class="pro-container">
+<div class="pro" onclick="window.location.href='mproduct.html';">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_192204.jpg">
+<div class="des">
+<h5>Handmade Clay Toy</h5>
+<div class="star">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<h4>$20</h4>
+</div>
+<a href="#" ><i class="fa fa-shopping-cart cart"></i></a>
+</div>
+
+<div class="pro">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_192150.jpg">
+<div class="des">
+<h5>Handmade Clay Toy</h5>
+<div class="star">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<h4>$78</h4>
+</div>
+<a href="#" ><i class="fa fa-shopping-cart cart"></i></a>
+</div>
+
+<div class="pro">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_192015.jpg">
+<div class="des">
+<h5>Terracotta Dhunachi</h5>
+<div class="star">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<h4>$78</h4>
+</div>
+<a href="#" ><i class="fa fa-shopping-cart cart"></i></a>
+</div>
+
+<div class="pro">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_183200.jpg">
+<div class="des">
+<h5>Bamboo Handmade Beer Mug</h5>
+<div class="star">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<h4>$68</h4>
+</div>
+<a href="#" ><i class="fa fa-shopping-cart cart"></i></a>
+</div>
+
+<div class="pro">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_183315.jpg">
+<div class="des">
+<h5>Bamboo Storage Basket</h5>
+<div class="star">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<h4>$78</h4>
+</div>
+<a href="#" ><i class="fa fa-shopping-cart cart"></i></a>
+</div>
+
+<div class="pro">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_192043.jpg">
+<div class="des">
+<h5>Clay Daal Handi</h5>
+<div class="star">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<h4>$55</h4>
+</div>
+<a href="#" ><i class="fa fa-shopping-cart cart"></i></a>
+</div>
+
+
+
+</div>
+</section>
+
+
+
+
+
+
+
+<section id="newsletter"class="section-p1"class="section-m1">
+<div class="newstext">
+<h4>Sign up for News letter</h4>
+<p>Get E-mail update about our latest shop and <span>Special Offer</span></p>
+</div>
+<div class="form">
+<input type="text" placeholder="your email adress">
+<button class="normal">sign up</button>
+</div>
+</section>
+
+
+<footer class="section-p1">
+<div class="col">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_200528.jpg" class="logo">
+<h4>contact</h4>
+<p><strong>Address:</strong>Remuna,Balasore,Odisha</p>
+<p><strong>Phone:</strong>6370436769</p>
+<p><strong>Hours</strong>10:00,18:00,mon.sat</p>
+<div class="follow">
+<h4>Follow Us</h4>
+<div class="icon">
+<i class="fa fa-facebook"></i>
+<i class="fa fa-instagram"></i>
+<i class="fa fa-twitter"></i>
+<i class="fa fa-linkedin-square"></i>
+</div>
+</div>
+</div>
+
+<div class="col">
+<h4>About</h4>
+<a href="#" >About Us</a>
+<a href="#" >Delivery information</a>
+<a href="#" >Privacy Policy</a>
+<a href="#" >Terms & Condition</a>
+<a href="#" >Contact Us</a>
+</div>
+
+<div class="col">
+<h4>My Account</h4>
+<a href="#" >Sign in</a>
+<a href="#" >View Cart</a>
+<a href="#" >My Wishlist</a>
+<a href="#" >Track My Order</a>
+<a href="#" >Help</a>
+</div>
+
+<div class="col install">
+<h4>Install App</h4>
+<p>Form App store or Google play</p>
+<div class="row">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_195717.jpg">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_195734.jpg">
+
+<p>Secured Payment Gateways</p>
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20230612_121931.jpg">
+</div>
+</div>
+
+<div class="copyright">
+<p>@2023,Pranab etc-Shopcart</p>
+</div>
+
+
+
+</footer>
+
+
+<script type="text/javascript">
+
+var mainImg = document.getElementById("mainImg");
+var smallImg = document.getElementByClassName("small-img");
+
+smallImg[0].onclick = function (){
+mainImg.src = smallImg[0].src;
+}
+smallImg[1].onclick = function (){
+mainImg.src = smallImg[1].src;
+}
+smallImg[2].onclick = function (){
+mainImg.src = smallImg[2].src;
+}
+smallimg[3].onclick = function (){
+mainImg.src = smallImg[3].src;
+}
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

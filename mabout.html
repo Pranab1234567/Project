@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>shopping website</title>
+<style type="text/css">
+*{margin:0;padding:0;box_sizing:border-box;}
+body{width:100%;height:100%;}
+#header{display:flex;align-items:center;
+justify-content:space-between;
+padding:20px 90px;
+background-color:#fff;
+box-shadow:0 5px 15px rgba(0,0,0,0.06);
+z-index:999;
+position:sticky;top:0;left:0;
+}
+#navbar{display:flex;align-items:center;justify-content:center;position:relative;}
+
+
+
+
+#navbar li{list-style:none;padding:0 20px;position:relative;}
+#navbar li a{text-decoration:none;font-size:16px;font-weight:600;
+color:blue;transition:0.3s ease;
+}
+#navbar li a:hover,
+#navbar li a.active{color:#f3971b;}
+#navbar li a.active::after,
+#navbar li a:hover::after{content:" ";
+width:30%;height:2px;background:aqua;position:absolute;
+bottom:-4px;left:20px;
+}
+
+#hero{background-image:url("/storage/emulated/0/Pictures/Screenshots/IMG_20230615_122213.jpg");
+height:50vh;width:85%;background-size:cover;color:black;
+background-position:center; padding:0px 80px;overflow:hidden;
+display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+}
+
+#hero h2{padding-botton:15px;}
+#hero h2{color:navy;}
+
+
+
+
+
+
+.section-p1{padding:40px 80px;}
+
+#feature {display:flex;align_items:center;
+justify-content:space-between;flex-wrap:wrap;
+}
+
+#feature .fe-box{width:110px;text-align:center;
+padding:25px 15px;box-shadow:20px 20px 34px rgba(0,0,0,0.03);
+border:1px solid #cce7d0;border-radius:4px;margin:15px 0;
+}
+#feature .fe-box:hover{box-shadow:10px 10px 54px rgba(20,63,221,0.1);}
+#feature .fe-box h6{display:inline-block;
+padding:9px 8px 6px 8px;line-height:1;border-radius:4px;
+color:#013178;background-color:#fddde4;
+}
+#feature .fe-box img{width:100%;margin-bottom:10px;}
+#feature .fe-box:nth-child(2) h6{background-color:#f3971b;}
+#feature .fe-box:nth-child(3) h6{background-color:aqua;}
+#feature .fe-box:nth-child(4) h6{background-color:lime;}
+#feature .fe-box:nth-child(5) h6{background-color:tomato;}
+
+
+
+
+
+
+#newsletter{display:flex;justify-content:space-between;height:10vh;width:85%;margin-top:20px;
+align-items:center;flex-wrap:wrap;background-image:url("/storage/emulated/0/Pictures/Screenshots/IMG_20230612_091127.jpg");
+background-repeat:no-repeat;background-position:20% 30%;background-color:navy;
+}
+#newsletter h4{font-size:22px;font-weight:700;color:#fff;}
+#newsletter p{font-size:15px;font-weight:600;color:aqua;}
+#newsletter p span{color:#f3971b;}
+#newsletter input{height:3.125ram;padding:0 1.25am;
+font-size:15px;width:100%;border:1px solid teansparent;
+border-radius:4px;outline:none;border-top-right-radius:0;border-bottom-right-radius:0;
+}
+#newsletter button{background-color:#f3971b;color:white;white-space:no-wrap;border-top-left-radius:0;border-bottom-left-radius:0;}
+#newsletter .form{display:flex;width:30%;}
+
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;}
+footer .col{display:flex;flex-direction:column;align-items:flex start;margin-bottom:20px;margin-top:10px;}
+footer .logo{margin-bottom:30px;}
+footer h4{font-size:14px;padding-bottom:20px;}
+footer p{font-size:13px;;margin:0 0 8px 0;}
+footer a{font-size:13px;text-decoration:none;color:#222;margin-botton:10px;}
+footer .follow{margin-top:20px;}
+footer .follow i{color:#32a8a2;padding-right:4px;cursor:pointer;}
+footer .install .row img{border:1px solid #32a8a2;border-radius:4px;}
+footer .install img{margin:10px 0 15px 0;}
+footer .follow i:hover,
+footer a :hover{color:#a032a8;}
+footer .copyright{width:100%;text-align:center;}
+#mobile{display:none;align-items:center;}
+#lg-bag{display:flex;}
+#close{display:none;}
+.logo{width:50px;height:40px;}
+.row img{width:100px;height:30px;}
+#pagination{text-align:center;margin-top:30px;margin-bottom:30px;}
+#pagination a{text-decoration:none;
+background-color:blue;
+color:#fff;
+border-radius:4px;
+padding:15px 20px;
+font-weight:600;
+
+}
+#pagination a i{font-size:16px;font-weight:600;}
+
+
+#prodetails .single-pro-image{width:50%;margin-leftt:50px;float:left;height:50vh;}
+
+
+#prodetails{display:flex;margin-top:20px;}
+#prodetails .single-pro-details{width:50%;padding-top:10%;padding-left:20px;}
+
+#prodetails .single-pro-details h2{font-size:26px;}
+#prodetails .single-pro-details p{font-size:18px;}
+#prodetails .single-pro-details select{display:block;
+padding:5px 10px;margin-bottom:10px;
+}
+
+#prodetails .single-pro-details span{line-height:25px;}
+#prodetails .single-pro-details marque{width:100%;font-size:25px;}
+
+
+#about-app{text-align:center;}
+#about-app .video{width:70%;height:100%;margin:30px auto 0 auto;}
+#about-app .video video{width:100%;height:100%;border-radius:20px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:477px){
+.section-p1{padding:10px;}
+#navbar{display:flex;align-items:flex-start;justify-content:flex-start;
+flex-direction:column;position:absolute;top:0;right:-300px;
+height:100vh;width:300px;background-color:#fff;
+box-shadow:0 40px 64px rgba(0,0,0,0.2);
+padding:80px 0 0 10px;transition:0.3s;
+
+}
+
+#navbar li{margin-botton:25px;}
+
+
+
+#header{padding: 10px 10px;}
+
+#hero{padding:0 20px;background-position:left;height:70vh;width:100%;}
+h2{font-size:32px;}
+h1{font-size:38px;}
+
+#feature .fe-box{width:155px;margin:0 0 15px 0;}
+#feature{justify-content:center;}
+
+#newsletter .form{width:100%;height:50px;}
+#newsletter{padding:30px 20px;height:20vh;width:85%;}
+footer .copyright{text-align:start;}
+
+
+#mobile{display:flex;align-items:center;}
+#mobile i{color:blue;font-size:24px;padding-left:20px;}
+#close{position:absolute;top:30px;left:30px;color:blue;font-size:24px;display:initial;}
+#close{display:initial;}
+
+#navbar.active{right:0px;}
+.row img{width:70px;height:20px;}
+
+#prodetails{diaplay:flex;flex-direction:column;}
+
+#prodetails .single-pro-details p{width:100%;font-size:20px;}
+
+
+#prodetails .single-pro-details{width:100%;}
+#prodetails .single-pro-image{width:100%;}
+#prodetails .single-pro-details marque{width:100%;font-size:25px;}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<section id="header">
+<a href="#" ><img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_200528.jpg" class="logo" alt="logo"></a>
+<div>
+<ul id="navbar">
+<li><a href="index.html" >Home</a></li>
+<li><a href="mshopping.html" >Shop</a></li>
+<li><a class="active" href="mabout.html" >About</a></li>
+<li><a href="mcontact.html" >Contact</a></li>
+<li><a href="#" id="lg-bag"><i class="fa fa-shopping-cart"></i></a></li>
+<a href="#" id="close"><i class="fa fa-times-circle"></i></a>
+</ul>
+
+</div>
+
+<div id="mobile">
+<a href="#" ><i class="fa fa-shopping-cart"></i></a>
+<a href="#" ><i id="bar" class="fa fa-bars"></i></a>
+</div>
+
+
+
+
+</section>
+<section id="hero">
+<h2>#Know us</h2>
+<p>Save more with coupons & upto 80% off</p>
+
+</section>
+
+<section id="prodetails" class="section-p1">
+<div class="single-pro-image">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20230615_201658.jpg" width="100%" id="mainImg">
+
+</div>
+<div class="single-pro-details">
+<h2>Who We Are</h2>
+<p>About Us
+
+
+User
+Write something about us page in my ecomorce website 
+
+ChatGPT
+Welcome to [Shopcart]!
+
+At [YShopcarte], we believe in providing our customers with an exceptional online shopping experience. We strive to create a platform that offers a wide range of high-quality products, competitive prices, and excellent customer service.
+
+Our Story:
+[Shopcart] was founded with a simple vision: to connect people with the products they love, all in one convenient online destination. We understand the joy and convenience of online shopping and wanted to create a platform that caters to the diverse needs and preferences of our customers.
+
+Product Selection:
+We take great pride in curating a vast collection of products across various categories. Whether you're looking for the latest fashion trends, cutting-edge technology, home decor, beauty essentials, or anything in between, we've got you covered. Our team works tirelessly to source products from trusted brands and manufacturers, ensuring that each item meets our high standards of quality.
+</p>
+</div></section>
+<div>
+<abbr title="">create srunning images with us much or as little control as your like thanks to a choice of basic and creative modes</abbr>
+<br><br>
+<marquee bgcolor="#f3971b" loop="-1" scrollamount="5" width="100%">
+create srunning images with us much or as little control as your like thanks to a choice of basic and creative modes
+</marquee>
+</div>
+
+
+</section>
+
+<section id="about-app" class="section-p1">
+<h1>Download Our <a href="#" >App</a></h1>
+<div class="video">
+<video  controls="control" loop src="/storage/emulated/0/Movies/KineMaster/VID_20230615142713.mp4"></video>
+</div>
+</section>
+
+
+
+
+
+
+
+<section id="feature"class="section-p1">
+<div class="fe-box">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_185148.jpg">
+<h6>Supercoins</h6>
+</div>
+
+<div class="fe-box">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20230530_121323.jpg">
+<h6>Credit</h6>
+</div>
+
+<div class="fe-box">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_185157.jpg">
+<h6>Emi</h6>
+</div>
+
+<div class="fe-box">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_185212.jpg">
+<h6>Studentclub</h6>
+</div>
+
+
+<div class="fe-box">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_185223.jpg">
+<h6>Grup buy</h6>
+</div>
+
+</section>
+
+
+
+
+<section id="newsletter"class="section-p1"class="section-m1">
+<div class="newstext">
+<h4>Sign up for News letter</h4>
+<p>Get E-mail update about our latest shop and <span>Special Offer</span></p>
+</div>
+<div class="form">
+<input type="text" placeholder="your email adress">
+<button class="normal">sign up</button>
+
+</section>
+
+
+<footer class="section-p1">
+<div class="col">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_200528.jpg" class="logo">
+<h4>contact</h4>
+<p><strong>Address:</strong>Remuna,Balasore,Odisha</p>
+<p><strong>Phone:</strong>6370436769</p>
+<p><strong>Hours</strong>10:00,18:00,mon.sat</p>
+<div class="follow">
+<h4>Follow Us</h4>
+<div class="icon">
+<i class="fa fa-facebook"></i>
+<i class="fa fa-instagram"></i>
+<i class="fa fa-twitter"></i>
+<i class="fa fa-linkedin-square"></i>
+</div>
+</div>
+</div>
+
+<div class="col">
+<h4>About</h4>
+<a href="#" >About Us</a>
+<a href="#" >Delivery information</a>
+<a href="#" >Privacy Policy</a>
+<a href="#" >Terms & Condition</a>
+<a href="#" >Contact Us</a>
+</div>
+
+<div class="col">
+<h4>My Account</h4>
+<a href="#" >Sign in</a>
+<a href="#" >View Cart</a>
+<a href="#" >My Wishlist</a>
+<a href="#" >Track My Order</a>
+<a href="#" >Help</a>
+</div>
+
+<div class="col install">
+<h4>Install App</h4>
+<p>Form App store or Google play</p>
+<div class="row">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_195717.jpg">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_195734.jpg">
+
+<p>Secured Payment Gateways</p>
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20230612_121931.jpg">
+</div>
+</div>
+
+<div class="copyright">
+<p>@2023,Pranab etc-Shopcart</p>
+</div>
+
+
+</footer>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>shopping website</title>
+<style type="text/css">
+*{margin:0;padding:0;box_sizing:border-box;}
+body{width:100%;height:100%;}
+#header{display:flex;align-items:center;
+justify-content:space-between;
+padding:20px 90px;
+background-color:#fff;
+box-shadow:0 5px 15px rgba(0,0,0,0.06);
+z-index:999;
+position:sticky;top:0;left:0;
+}
+#navbar{display:flex;align-items:center;justify-content:center;position:relative;}
+
+
+
+
+#navbar li{list-style:none;padding:0 20px;position:relative;}
+#navbar li a{text-decoration:none;font-size:16px;font-weight:600;
+color:blue;transition:0.3s ease;
+}
+#navbar li a:hover,
+#navbar li a.active{color:#f3971b;}
+#navbar li a.active::after,
+#navbar li a:hover::after{content:" ";
+width:30%;height:2px;background:aqua;position:absolute;
+bottom:-4px;left:20px;
+}
+
+#hero{background-image:url("/storage/emulated/0/Pictures/Screenshots/IMG_20230615_122213.jpg");
+height:50vh;width:85%;background-size:cover;color:black;
+background-position:center; padding:0px 80px;overflow:hidden;
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+
+#hero h2{padding-botton:15px;}
+#hero h2{color:navy;}
+
+
+
+
+
+
+
+
+
+#newsletter{display:flex;justify-content:space-between;height:10vh;width:100%;margin-top:20px;
+align-items:center;flex-wrap:wrap;background-image:url("/storage/emulated/0/Pictures/Screenshots/IMG_20230612_091127.jpg");
+background-repeat:no-repeat;background-position:20% 30%;background-color:navy;
+}
+#newsletter h4{font-size:22px;font-weight:700;color:#fff;}
+#newsletter p{font-size:15px;font-weight:600;color:aqua;}
+#newsletter p span{color:#f3971b;}
+#newsletter input{height:3.125ram;padding:0 1.25am;
+font-size:15px;width:100%;border:1px solid teansparent;
+border-radius:4px;outline:none;border-top-right-radius:0;border-bottom-right-radius:0;
+}
+#newsletter button{background-color:#f3971b;color:white;white-space:no-wrap;border-top-left-radius:0;border-bottom-left-radius:0;width:60px;height:30px;}
+#newsletter .form{display:flex;width:30%;padding-right:50px;}
+
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;}
+footer .col{display:flex;flex-direction:column;align-items:flex start;margin-bottom:20px;margin-top:10px;}
+footer .logo{margin-bottom:30px;}
+footer h4{font-size:14px;padding-bottom:20px;}
+footer p{font-size:13px;;margin:0 0 8px 0;}
+footer a{font-size:13px;text-decoration:none;color:#222;margin-botton:10px;}
+footer .follow{margin-top:20px;}
+footer .follow i{color:#32a8a2;padding-right:4px;cursor:pointer;}
+footer .install .row img{border:1px solid #32a8a2;border-radius:4px;}
+footer .install img{margin:10px 0 15px 0;}
+footer .follow i:hover,
+footer a :hover{color:#a032a8;}
+footer .copyright{width:100%;text-align:center;}
+#mobile{display:none;align-items:center;}
+#lg-bag{display:flex;}
+#close{display:none;}
+.logo{width:50px;height:40px;}
+.row img{width:100px;height:30px;}
+#pagination{text-align:center;margin-top:30px;margin-bottom:30px;}
+#pagination a{text-decoration:none;
+background-color:blue;
+color:#fff;
+border-radius:4px;
+padding:15px 20px;
+font-weight:600;
+
+}
+#pagination a i{font-size:16px;font-weight:600;}
+
+#contact-details{display:flex;align-items:center;justify-content:space-between;}
+#contact-details .details{width:40%;padding-left:30px;}
+#contact-details .details span{font-size:18px;}
+#contact-details .details h2{font-size:26px;line-height:35px;padding:20px 0;}
+#contact-details .details h3{font-size:20px;padding-bottom:15px;}
+#contact-details .details li{list-style:none;display:flex;padding:10px 0;}
+#contact-details .details li i{font-size:15px;padding-right:22px;}
+#contact-details .details li p{margin:0;font-size:15px;}
+#contact-details .map{width:55%;height:400px;}
+#contact-details .map iframe{width:100%;height:100%;}
+
+
+#form-details{display:flex;justify-content:space-between;
+margin:30px;padding:30px;border:1px solid #e1e1e1;
+}
+#form-details form{width:65%;display:flex;
+flex-direction:column;align-items:flex-start;
+}
+#form-details form span{font-size:15px;}
+#form-details form h2{font-size:26px;line-height:35px;padding:20px 0;}
+#form-details form input{width:100%;padding:12px 15px ;
+outline:none;margin-bottom:20px;border:1px solid #e1e1e1;
+}
+#form-details form button{background-color:#088178;color:#fff;height:50px;width:80px;}
+
+#form-details form textarea{width:100%;padding:12px 15px ;
+outline:none;margin-bottom:20px;border:1px solid #e1e1e1;
+}
+
+
+#form-details .people div{padding-bottom:25px;display:flex;align-items:flex-start;padding-left:50px;}
+#form-details .people img{width:65px;height:65px;object-fit:cover;
+margin-right:15px;
+border-radius:50%;
+}
+#form-details .people div p{margin:0;font-size:13px;line-height:25px;}
+#form-details .people div span{display:block;font-size:17px;font-weight:600;color:#000;}
+
+
+
+
+
+
+@media screen and (max-width:477px){
+.section-p1{padding:10px;}
+#navbar{display:flex;align-items:flex-start;justify-content:flex-start;
+flex-direction:column;position:absolute;top:0;right:-300px;
+height:100vh;width:300px;background-color:#fff;
+box-shadow:0 40px 64px rgba(0,0,0,0.2);
+padding:80px 0 0 10px;transition:0.3s;
+
+}
+
+#navbar li{margin-botton:25px;}
+
+
+
+#header{padding: 10px 10px;}
+
+#hero{padding:0 20px;background-position:left;height:70vh;width:100%;}
+h2{font-size:32px;}
+h1{font-size:38px;}
+
+#newsletter .form{width:100%;height:50px;}
+#newsletter{padding:30px 20px;height:20vh;width:100%;}
+footer .copyright{text-align:start;}
+
+
+#mobile{display:flex;align-items:center;}
+#mobile i{color:blue;font-size:24px;padding-left:20px;}
+#close{position:absolute;top:30px;left:30px;color:blue;font-size:24px;display:initial;}
+#close{display:initial;}
+
+#navbar.active{right:0px;}
+.row img{width:70px;height:20px;}
+
+#contact-details{flex-direction:column;}
+#contact-details .details{width:100%;margin-bottom:30px;}
+#contact-details .map{width:100%;}
+#form-details{margin:10px;padding:30px 10px; flex-wrap:wrap;}
+#form-details form{width:100%;margin-bottom:30px;}
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+<section id="header">
+<a href="#" ><img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_200528.jpg" class="logo" alt="logo"></a>
+<div>
+<ul id="navbar">
+<li><a href="index.html" >Home</a></li>
+<li><a href="mshopping.html" >Shop</a></li>
+<li><a  href="mabout.html" >About</a></li>
+<li><a class="active" href="mcontact.html" >Contact</a></li>
+<li><a href="#" id="lg-bag"><i class="fa fa-shopping-cart"></i></a></li>
+<a href="#" id="close"><i class="fa fa-times-circle"></i></a>
+</ul>
+
+</div>
+
+<div id="mobile">
+<a href="#" ><i class="fa fa-shopping-cart"></i></a>
+<a href="#" ><i id="bar" class="fa fa-bars"></i></a>
+</div>
+
+
+</section>
+<section id="hero">
+<h2>#Let's talk</h2>
+<p>LEAVE A MESSAGE , We love to hear from you</p>
+</section>
+
+<section id="contact-details" class="section-p1">
+<div class="details">
+<span>GET IN TOUCH</span>
+<h2>Visit one of our agency location of contact as today</h2>
+<h3>Head Office</h3>
+
+<div>
+<li>
+<i class="fa fa-map-marker"></i>
+<p>Remuna Balasore ,Odosha,India</p>
+</li>
+<li>
+<i class="fa fa-envelope"></i>
+<p>shopcart@gmail.com</p>
+</li>
+<li>
+<i class="fa fa-phone"></i>
+<p>+915370436767</p>
+</li>
+<li>
+<i class="fa fa-clock-o"></i>
+<p>Monday to Saturday : 9:00am to 16pm</p>
+</li>
+</div>
+</div>
+
+<div class="map">
+<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1cs0dr3BTBm244iMZ821udUUT6sNtqzU&ehbc=2E312F" width="640" height="480"></iframe>">
+</div>
+
+</section>
+
+<section id="form-details">
+<form action="">
+<span>LEAVE A MESSAGE</span>
+<h2>WeLove to hear from you</h2>
+<input type="text" placeholder="your name">
+<input type="text" placeholder="E-mail">
+<input type="text" placeholder="Subject">
+<textarea name="" id="" cols="30" rows="10" placeholder="your message"></textarea>
+<button class="normal">Submit</button>
+</form>
+
+
+<div class="people">
+<div class="people">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231021_135137.jpg">
+<p><span>Pranab Mahalik</span>Software Developer<br>phone:+915643179065 <br> E-mail:Tech.pranab@gmail.com</p>
+</div>
+
+<div class="people">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231021_134902.jpg">
+<p><span>prakash jena</span> Senior Software Engineer<br>phone:+91578431567<br>E-mail:prakash@gmail.com</p>
+</div>
+
+<div class="people">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231021_134851.jpg">
+<p><span>Pabitra Sahu</span>Python Developer<br>phone:+917564327865<br>E-mail:Pypabitra@gmail.com</p>
+</div>
+</div>
+</section>
+
+
+
+
+<section id="newsletter"class="section-p1"class="section-m1">
+<div class="newstext">
+<h4>Sign up for News letter</h4>
+<p>Get E-mail update about our latest shop and <span>Special Offer</span></p>
+</div>
+<div class="form">
+<input type="text" placeholder="your email adress">
+<button class="normal">sign up</button>
+</div>
+</section>
+
+<footer class="section-p1">
+<div class="col">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_200528.jpg" class="logo">
+<h4>contact</h4>
+<p><strong>Address:</strong>Remuna,Balasore,Odisha</p>
+<p><strong>Phone:</strong>6370436769</p>
+<p><strong>Hours</strong>10:00,18:00,mon.sat</p>
+<div class="follow">
+<h4>Follow Us</h4>
+<div class="icon">
+<i class="fa fa-facebook"></i>
+<i class="fa fa-instagram"></i>
+<i class="fa fa-twitter"></i>
+<i class="fa fa-linkedin-square"></i>
+</div>
+</div>
+</div>
+
+<div class="col">
+<h4>About</h4>
+<a href="#" >About Us</a>
+<a href="#" >Delivery information</a>
+<a href="#" >Privacy Policy</a>
+<a href="#" >Terms & Condition</a>
+<a href="#" >Contact Us</a>
+</div>
+
+<div class="col">
+<h4>My Account</h4>
+<a href="#" >Sign in</a>
+<a href="#" >View Cart</a>
+<a href="#" >My Wishlist</a>
+<a href="#" >Track My Order</a>
+<a href="#" >Help</a>
+</div>
+
+<div class="col install">
+<h4>Install App</h4>
+<p>Form App store or Google play</p>
+<div class="row">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_195717.jpg">
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20231020_195734.jpg">
+
+<p>Secured Payment Gateways</p>
+<img src="/storage/emulated/0/Pictures/Screenshots/IMG_20230612_121931.jpg">
+</div>
+</div>
+
+<div class="copyright">
+<p>@2023,Pranab etc-Shopcart</p>
+</div>
+
+
+</footer>
+
+
+
+
+
+</body>
+</html>
