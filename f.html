@@ -19,6 +19,7 @@
     .container {
     background-color: #f3971b;
     padding: 200px;
+    margin-left:40px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
@@ -74,7 +75,25 @@
             <button type="submit">Sign Up</button>
         </form>
     </div>
-    
+
+    <div class="container">
+    <form id="signupForm" onsubmit="LoginForm(event)">
+    <h2>Signup Form</h2>
+    <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" id="username" required>
+    </div>
+    <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+    </div>
+    <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" required>
+    </div>
+    <button type="submit">Log in</button>
+    </form>
+    </div>
     
    <script type="text/javascript">
    
@@ -95,6 +114,22 @@
    alert("Signup successful!");
    }
    
+   function LoginForm(event) {
+   event.preventDefault();
+   
+   var username = document.getElementById("username").value;
+   var email = document.getElementById("email").value;
+   var password = document.getElementById("password").value;
+   
+   // You can add further validation or processing here.
+   
+   // For this example, let's just log the values to the console.
+   console.log("Username:", username);
+   console.log("Email:", email);
+   console.log("Password:", password);
+   
+   alert("Login successful!");
+   }
    
    
    </script> 
